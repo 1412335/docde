@@ -1,0 +1,9 @@
+{
+    "apps": [{
+        "name": "docde",
+        "script": "./index.js",
+        "ignore_watch": [
+            "node_modules"
+        ]
+    }]
+}
