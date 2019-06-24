@@ -1,0 +1,7 @@
+docker build -t namnnp/docde-v1 .
+
+docker run -d -p 3001:8080 --name docde-v1.1 namnnp/docde-v1
+
+docker logs docde-v1
+
+docker exec -ti docde-v1 bash
