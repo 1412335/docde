@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: ubuntu:18.04
+      - image: docker:17.05.0-ce-git
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -24,9 +24,12 @@ jobs:
       - run:
           name: Install Docker Compose
           command: |
-            curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-            chmod +x ~/docker-compose
-            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+            # curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            # chmod +x ~/docker-compose
+            # sudo mv ~/docker-compose /usr/local/bin/docker-compose
+            sudo apt update
+            sudo apt install python-pip
+            pip install docker-compose==1.23.2
 
       - run:
           name: Build Services & Testing
