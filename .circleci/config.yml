@@ -27,8 +27,7 @@ jobs:
             # curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             # chmod +x ~/docker-compose
             # sudo mv ~/docker-compose /usr/local/bin/docker-compose
-            sudo apt update
-            sudo apt install python-pip
+            apk add --no-cache py-pip
             pip install docker-compose==1.23.2
 
       - run:
