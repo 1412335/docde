@@ -20,13 +20,15 @@ ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
 
 cat > ~/.netrc << EOF
 machine api.heroku.com
-login $HEROKU_LOGIN
-password $HEROKU_API_KEY
+    login $HEROKU_LOGIN
+    password $HEROKU_API_KEY
 machine git.heroku.com
-login $HEROKU_LOGIN
-password $HEROKU_API_KEY
+    login $HEROKU_LOGIN
+    password $HEROKU_API_KEY
 EOF
 
+mkdir ~/.ssh
+touch ~/.ssh/config
 cat >> ~/.ssh/config << EOF
 VerifyHostKeyDNS yes
 StrictHostKeyChecking no
