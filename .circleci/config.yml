@@ -46,8 +46,8 @@ jobs:
       #     command: |
       #       chmod +x .circleci/setup-heroku.sh
       #       .circleci/setup-heroku.sh
-      - run:
-          name: Deploy to Heroku
-          command: |
-            git push origin master
+      # - run:
+      #     name: Deploy to Heroku
+      #     command: |
+      #       git push origin master
             
