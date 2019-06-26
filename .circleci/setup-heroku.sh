@@ -1,6 +1,6 @@
 #!/bin/bash
-# set -eu
-# git remote add heroku https://git.heroku.com/$HEROKU_APP_NAME.git
+set -eu
+git remote add heroku https://git.heroku.com/$HEROKU_APP_NAME.git
 # wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 # cat > ~/.netrc << EOF
 # machine api.heroku.com
