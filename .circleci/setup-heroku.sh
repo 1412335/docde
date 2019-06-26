@@ -27,8 +27,8 @@ machine git.heroku.com
     password $HEROKU_API_KEY
 EOF
 
-mkdir ~/.ssh
-touch ~/.ssh/config
+# mkdir ~/.ssh
+# touch ~/.ssh/config
 cat >> ~/.ssh/config << EOF
 VerifyHostKeyDNS yes
 StrictHostKeyChecking no
