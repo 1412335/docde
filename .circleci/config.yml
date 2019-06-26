@@ -7,7 +7,8 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: docker:17.05.0-ce-git
+      # - image: docker:17.05.0-ce-git
+      - image: ubuntu
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -27,7 +28,11 @@ jobs:
             # curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             # chmod +x ~/docker-compose
             # sudo mv ~/docker-compose /usr/local/bin/docker-compose
-            apk add --no-cache py-pip
+            #image: docker:17.05.0-ce-git
+            # apk add --no-cache py-pip
+            # pip install docker-compose==1.23.2
+            sudo apt update
+            sudo apt install python-pip
             pip install docker-compose==1.23.2
 
       - run:
@@ -62,7 +67,7 @@ jobs:
           command: |
             chmod a+x .circleci/setup-heroku.sh
             ls -la .circleci
-            .circleci/setup-heroku.sh
+            bash .circleci/setup-heroku.sh
       - run:
           name: Deploy to Heroku
           command: |
