@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: docker:19.03.0-rc3
+      - image: ubuntu:18.04
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
