@@ -78,6 +78,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
+            yarn global add heroku
             heroku container:release web --app $HEROKU_APP_NAME
 
 #   deploy:
