@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Update VM
           command: |
-            apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl
+            apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl && apk add --no-cached bash
 
       - run:
           name: Install Docker Compose
