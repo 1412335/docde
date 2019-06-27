@@ -7,7 +7,8 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: docker:17.05.0-ce-git
+      # - image: docker:17.05.0-ce-git
+      - image: node:10.5.0-alpine
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -25,6 +26,7 @@ jobs:
           name: Update VM
           command: |
             apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl && apk add --no-cached bash
+            apk add docker
 
       - run:
           name: Install Docker Compose
