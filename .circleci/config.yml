@@ -27,6 +27,7 @@ jobs:
           command: |
             apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl && apk add --no-cached bash
             apk add docker
+            apk add git
 
       - run:
           name: Install Docker Compose
