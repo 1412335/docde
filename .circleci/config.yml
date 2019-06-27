@@ -28,6 +28,7 @@ jobs:
             apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl && apk add --no-cached bash
             apk add docker
             apk add git
+            apk add openssh
 
       - run:
           name: Install Docker Compose
@@ -36,7 +37,7 @@ jobs:
             # chmod +x ~/docker-compose
             # sudo mv ~/docker-compose /usr/local/bin/docker-compose
             #image: docker:17.05.0-ce-git
-            apk add --no-cache py-pip
+            apk update && apk add --no-cache py-pip
             pip install docker-compose==1.23.2
             # sudo apt update
             # sudo apt install -y python-pip
