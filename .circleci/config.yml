@@ -22,6 +22,11 @@ jobs:
       - setup_remote_docker
 
       - run:
+          name: Update VM
+          command: |
+            apk update && apk add ca-certificates wget && update-ca-certificates && apk add openssl
+
+      - run:
           name: Install Docker Compose
           command: |
             # curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
