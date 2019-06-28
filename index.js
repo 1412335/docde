@@ -1,6 +1,7 @@
 var express = require('express');
 var redis = require('redis');
 
+if (process.env.NODE_ENV == 'local') {
 var REDIS_HOST = 'redis', 
     REDIS_PORT = 6379;
 
@@ -8,18 +9,20 @@ var redisClient = redis.createClient({
   host: REDIS_HOST,
   port: REDIS_PORT
 });
- 
+
 redisClient.on("error", function (err) {
     console.log("Error " + err);
 });
 
 redisClient.set("count", "0");
+}
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 
 app.get('/', function (req, res) {
+if (process.env.NODE_ENV == 'local') {
   redisClient.get("count", function(err, reply) {
     if (err) console.log(err);
     else {
@@ -33,6 +36,9 @@ app.get('/', function (req, res) {
       res.send('View ' + reply);
     }
   });
+} else {
+  res.send('Hello');
+}
 });
 
 app.listen(PORT);

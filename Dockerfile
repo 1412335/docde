@@ -19,6 +19,8 @@ COPY . /usr/src/docde
 
 VOLUME [ "/usr/src/docde" ]
 
+ENV NODE_ENV="production"
+
 EXPOSE 8080
 
 # CMD [ "npm", "start" ]
